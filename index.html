@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jack Montano</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/684ea0a623.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="index.js"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("HXN85M8kVxaG7Msbl");
+   })();
+</script>
+  </head>
+  <body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+      <nav>
+        <figure>
+          <img id="personal-logo" src="./AEassets/JMLOGO.jpeg" alt="" />
+        </figure>
+        <ul class="nav__link--list">
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >About</a
+            >
+          </li>
+          <li class="nav__link">
+            <a
+              href="#projects"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              >Projects</a
+            >
+          </li>
+          <li class="nav__link" onclick="toggleModal()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black" 
+              >Contact</a
+            >
+          </li>
+          <li class="nav__link click" onclick="toggleContrast()">
+            <a
+              href="#"
+              class="nav__link--anchor link__hover-effect link__hover-effect--black"
+              ><i class="fas fa-adjust"></i
+            ></a>
+          </li>
+        </ul>
+      </nav>
+      <header class="header">
+        <div class="header__content">
+          <h1 class="title">Hey!</h1>
+          <h1 class="title aqua">I'm Jack</h1>
+          <h2>Welcome to my self coded engineering portfolio!</h2>
+          <p class="header__para">
+            My name is Jack Montano, and I'm a <b class="aqua">creative individual looking to help others</b> and follow my <b class="aqua">dreams!</b>
+            <br />
+            Here's some more <b class="aqua click" onclick="toggleModal()">about me.</b>
+          </p>
+          <div class="social__list">
+            <a
+              href="https://www.linkedin.com/in/jack-montano-09808022b/"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://github.com/JackMontano"
+              target="_blank"
+              class="social__link click"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="./AEassets/Jack's Resume222 copy.pdf" target="_blank" class="social__link click">
+              <i class="fa-solid fa-file"></i>
+            </a>
+          </div>
+        </div>
+      </header>
+      <a href="#">
+      <button class="mail__btn click" onclick="toggleModal()">
+        <i class="fas fa-envelope"></i>
+      </button>
+       </a>
+      <a href="#projects" class="scroll">
+        <div class="scroll__icon click"></div>
+      </a>
+      <div class="modal">
+        <div class="modal__half modal__about">
+            <h3 class="modal__title modal__title--about"></h3>
+            <h4 class="modal__sub-title modal__sub-title--about">About, Jack Montaño</h4>
+            <p class="modal__para">
+                I'm a young, <b class="aqua">but hard working individual </b> who is self taught in <b class="aqua">front end software engineering and certified in UX Design through Google.</b> I graduated high school with my associates degree with the focus in <b class="aqua">business</b>, but then decided to get in to real estate a year after I graduated high school and college. Though, I figured out I wanted a more creativity driven career so I decided to teach myself front end coding and then get certified in UX design. 
+                <br>
+                I have always had a great interest in anything that used creativity. So areas like music, art, design, and engineering created sparks within me when I was growing up. I also love helping people and learning about humans role within the universe. I am the type of person to live up every day and be myslef no matter who I'm around, and I just want to help people feel the same way about life.
+            </p>
+              <h5>My languages</h5>
+            <div class="modal__languages">
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png" alt="">
+                    <span class="language__name">HTML</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+                    <span class="language__name">CSS</span>
+                </figure>
+                <figure class="modal__language">
+                    <img class="modal__language--img" src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
+                    <span class="language__name">JavaScript</span>
+                </figure>
+            </div>
+        </div>
+        <div class="modal__half modal__contact">
+        <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+            <h3 class="modal__title modal__title--contact">
+                Let's have a chat!
+            </h3>
+            <h3 class="modal__sub-title modal__sub-title--contact">
+                I'd love to hear from you.
+            </h3>
+            <form id="contact__form" onsubmit="contact(event)">
+                <div class="form__item">
+                    <label class="form__item--label">Name</label>
+                    <input class="input" name="user_name" type="text" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Email</label>
+                    <input class="input" name="user_email" type="text" required></input>
+                </div>
+                <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" name="message" type="text" required></textarea>
+                </div>
+                <button id="contact__submit" class="form__submit">Send message</button>
+            </form>
+            <div class="modal__overlay modal__overlay--loading">
+                <i class="fas fa-spinner"></i>
+            </div>
+            <div class="modal__overlay modal__overlay--success">
+                Thanks for the message! Looking forward to speaking with you soon!
+            </div>
+        </div>
+      </div>
+      <img src="./AEassets/semi circle.svg" class="shape shape--0">
+      <img src="./AEassets/circle.svg" class="shape shape--1">
+      <img src="./AEassets/squiggly.svg" class="shape shape--2">
+      <img src="./AEassets/circle.svg" class="shape shape--3">
+      <img src="./AEassets/triangle.svg" class="shape shape--4">
+      <img src="./AEassets/circle.svg" class="shape shape--5">
+      <img src="./AEassets/squiggly.svg" class="shape shape--6">
+      <img src="./AEassets/circle.svg" class="shape shape--7">
+      <img src="./AEassets/semi circle.svg" class="shape shape--8">
+    </section>
+    <section id="projects">
+      <div class="container">
+        <div class="row">
+          <h1 class="section__title">
+            More on me and my <span class="aqua">skills</span>
+          </h1>
+          <ul class="project__list">
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./AEassets/libraryprojpic.png"
+                  class="project__img"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Library Coding Project
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    Html, CSS, JavaScript (Coding skills)
+                  </h4>
+                  <p class="project__description--para">
+                    In this project I made an interactive lirary website that shows off my skills in HTML, CSS, and JavaScript. I wanted to make it look pleasing to the eye, but also smooth and interactive. I also added some elements of nostalgia in the way of also making it look like all those school library websites that many kids now-a-days are used to.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://github.com/JackMontano" target="_blank" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://jackmontano.github.io/Library-Project/" target="_blank" class="project__description--link">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./AEassets/uxdesign.png"
+                  class="project__img"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    UX Design Projects
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    Accessible User First UX Designs 
+                  </h4>
+                  <p class="project__description--para">
+                    Here you will find my UX Design portfolio that showcases my UX skills, and what I've learned through web/app designing for both real life projects and through my certificate program with Google. These projects consisted of lots of user research with lots of understanding and empathizing with users. Includes lots of wireframes, mockups, lo-fi and hi-fi protos, case studies, etc. Along with proof of my skills and knowledge in figma, and Adobe XD.
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://github.com/JackMontano" target="_blank" class="project__description--link">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.google.com/search?q=My+coding+skills+are+very+entry+level+lol&sxsrf=AJOqlzWSF1rinOmlEtk3kJ_20EZMFTXaGQ%3A1679443173383&ei=5UQaZMD5FtvPkPIPw_qzsAg&ved=0ahUKEwiAgJSune79AhXbJ0QIHUP9DIYQ4dUDCBA&uact=5&oq=My+coding+skills+are+very+entry+level+lol&gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIFCCEQoAEyBQghEKABOgoIABBHENYEELADOgQIIxAnOgUIIRCrAkoECEEYAFDUAVjUC2CNDWgBcAF4AIABYogB9gOSAQE3mAEAoAEByAEIwAEB&sclient=gws-wiz-serp" target="_blank" class="project__description--link">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="project">
+              <div class="project__wrapper">
+                <img
+                  src="./AEassets/ResumePic.jpeg"
+                  class="project__img"
+                  alt=""
+                />
+                <div class="project__wrapper--bg"></div>
+                <div class="project__description">
+                  <h3 class="project__description--title">
+                    Resume
+                  </h3>
+                  <h4 class="project__description--sub-title">
+                    Accomplishments, Qualifications, Skills, etc.
+                  </h4>
+                  <p class="project__description--para">
+                    Linked below is my professional resume where you will find more on my professional career, skills, certifications/achievements, hobbies etc. I have also included a link to my personal Instagram page below, but I do not post on my social media much. 
+                  </p>
+                  <div class="project__description--links">
+                    <a href="https://www.instagram.com/jackt.montano/?r=nametag" target="_blank" class="project__description--link">
+                    <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="./AEassets/Jack's Resume222 copy.pdf" target="_blank" class="project__description--link">
+                      <i class="fas fa-link"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row footer__row">
+          <figure>
+            <img class="footer__logo--img" src="./AEassets/JMLOGO.jpeg" alt="" />
+          </figure>
+          <div class="footer__social--list">
+            <a
+              href="https://github.com/JackMontano" target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Github</a
+            >
+            <a
+              href="https://www.linkedin.com/in/jack-montano-09808022b/" target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >LinkedIn</a
+            >
+            <a
+              href="#" onclick="toggleModal()"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Email</a
+            >
+            <a
+              href="./AEassets/Jack's Resume222 copy.pdf" target="_blank"
+              class="footer__social--link link__hover-effect link__hover-effect--white"
+              >Resume</a
+            >
+          </div>
+          <div class="footer__copyright">
+            Copyright &copy; Jack Montano 2022
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
